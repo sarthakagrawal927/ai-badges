@@ -1,0 +1,12 @@
+{
+  "name": "ai-badges",
+  "version": "1.0.0",
+  "description": "GitHub README badges for AI project transparency",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "keywords": ["badges", "github", "ai", "readme"],
+  "author": "",
+  "license": "MIT"
+}

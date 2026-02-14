@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Badges - GitHub README Decorators</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .badge-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .badge-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .preview {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .preview h3 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .preview img {
+            margin: 10px 0;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #5568d3;
+        }
+
+        .copy-btn.copied {
+            background: #4c1;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            margin-bottom: 8px;
+            color: #1976D2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Badges</h1>
+        <p class="subtitle">Transparent GitHub README badges for AI-assisted projects</p>
+
+        <!-- AI Percentage Badge -->
+        <div class="badge-section">
+            <h2>1. AI Percentage Badge</h2>
+            <p>Show what percentage of your project was AI-generated</p>
+
+            <div class="input-group">
+                <label for="percentage">AI Percentage (0-100):</label>
+                <input type="number" id="percentage" min="0" max="100" value="25" oninput="updatePercentageBadge()">
+            </div>
+
+            <div class="preview">
+                <h3>Preview:</h3>
+                <img id="percentage-preview" src="/api/ai-percentage?value=25" alt="AI Percentage Badge">
+            </div>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyToClipboard('percentage-markdown')">Copy</button>
+                <code id="percentage-markdown">![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=25)</code>
+            </div>
+
+            <div class="info-box">
+                <h3>📝 How to use:</h3>
+                <p>1. Set your AI percentage above<br>
+                2. Copy the markdown code<br>
+                3. Replace <code>your-domain.vercel.app</code> with your actual Vercel domain<br>
+                4. Paste into your README.md</p>
+            </div>
+        </div>
+
+        <!-- AI PRs Badge -->
+        <div class="badge-section">
+            <h2>2. AI PRs Welcome Badge</h2>
+            <p>Signal whether you accept AI-generated pull requests</p>
+
+            <div class="input-group">
+                <label for="ai-prs">Accept AI PRs?</label>
+                <select id="ai-prs" onchange="updatePRsBadge()">
+                    <option value="yes">Yes - Welcome AI PRs</option>
+                    <option value="no">No - Human PRs only</option>
+                </select>
+            </div>
+
+            <div class="preview">
+                <h3>Preview:</h3>
+                <img id="prs-preview" src="/api/ai-prs?welcome=yes" alt="AI PRs Badge">
+            </div>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyToClipboard('prs-markdown')">Copy</button>
+                <code id="prs-markdown">![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)</code>
+            </div>
+
+            <div class="info-box">
+                <h3>📝 How to use:</h3>
+                <p>1. Choose your preference above<br>
+                2. Copy the markdown code<br>
+                3. Replace <code>your-domain.vercel.app</code> with your actual Vercel domain<br>
+                4. Paste into your README.md</p>
+            </div>
+        </div>
+
+        <!-- Example Section -->
+        <div class="badge-section">
+            <h2>Example README</h2>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyToClipboard('example')">Copy</button>
+                <code id="example"># My Awesome Project
+
+![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=25)
+![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)
+
+Your project description here...</code>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made with ❤️ for transparent AI development</p>
+        </footer>
+    </div>
+
+    <script>
+        function updatePercentageBadge() {
+            const value = document.getElementById('percentage').value;
+            const preview = document.getElementById('percentage-preview');
+            const markdown = document.getElementById('percentage-markdown');
+
+            preview.src = `/api/ai-percentage?value=${value}`;
+            markdown.textContent = `![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=${value})`;
+        }
+
+        function updatePRsBadge() {
+            const value = document.getElementById('ai-prs').value;
+            const preview = document.getElementById('prs-preview');
+            const markdown = document.getElementById('prs-markdown');
+
+            preview.src = `/api/ai-prs?welcome=${value}`;
+            markdown.textContent = `![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=${value})`;
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.parentElement.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
