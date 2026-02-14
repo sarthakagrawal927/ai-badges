@@ -1,5 +1,8 @@
 # 🤖 AI Badges
 
+![AI Generated](https://img.shields.io/badge/AI%20Generated-100%25-fe7d37)
+![AI PRs Welcome](https://img.shields.io/badge/AI%20PRs-Welcome-4c1)
+
 Beautiful GitHub README badges for AI project transparency.
 
 ## 🚀 Features
