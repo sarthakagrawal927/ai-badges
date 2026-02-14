@@ -1,7 +1,7 @@
 # 🤖 AI Badges
 
-![AI Generated](https://img.shields.io/badge/AI%20Generated-100%25-fe7d37)
-![AI PRs Welcome](https://img.shields.io/badge/AI%20PRs-Welcome-4c1)
+![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=100)
+![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)
 
 Beautiful GitHub README badges for AI project transparency.
 
@@ -17,7 +17,7 @@ Beautiful GitHub README badges for AI project transparency.
 ### AI Percentage Badge
 
 ```markdown
-![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=25)
+![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=25)
 ```
 
 **Parameters:**
@@ -32,7 +32,7 @@ Beautiful GitHub README badges for AI project transparency.
 ### AI PRs Welcome Badge
 
 ```markdown
-![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)
+![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)
 ```
 
 **Parameters:**
@@ -60,8 +60,8 @@ Visit `http://localhost:3000` to see the badge generator.
 ```markdown
 # My Project
 
-![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=30)
-![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)
+![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=30)
+![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)
 
 This project is 30% AI-assisted and welcomes AI-generated contributions!
 ```

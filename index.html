@@ -188,14 +188,14 @@
 
             <div class="code-block">
                 <button class="copy-btn" onclick="copyToClipboard('percentage-markdown')">Copy</button>
-                <code id="percentage-markdown">![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=25)</code>
+                <code id="percentage-markdown">![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=25)</code>
             </div>
 
             <div class="info-box">
                 <h3>📝 How to use:</h3>
                 <p>1. Set your AI percentage above<br>
                 2. Copy the markdown code<br>
-                3. Replace <code>your-domain.vercel.app</code> with your actual Vercel domain<br>
+                3. Replace <code>ai-percentage-pin.vercel.app</code> with your actual Vercel domain<br>
                 4. Paste into your README.md</p>
             </div>
         </div>
@@ -220,14 +220,14 @@
 
             <div class="code-block">
                 <button class="copy-btn" onclick="copyToClipboard('prs-markdown')">Copy</button>
-                <code id="prs-markdown">![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)</code>
+                <code id="prs-markdown">![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)</code>
             </div>
 
             <div class="info-box">
                 <h3>📝 How to use:</h3>
                 <p>1. Choose your preference above<br>
                 2. Copy the markdown code<br>
-                3. Replace <code>your-domain.vercel.app</code> with your actual Vercel domain<br>
+                3. Replace <code>ai-percentage-pin.vercel.app</code> with your actual Vercel domain<br>
                 4. Paste into your README.md</p>
             </div>
         </div>
@@ -239,8 +239,8 @@
                 <button class="copy-btn" onclick="copyToClipboard('example')">Copy</button>
                 <code id="example"># My Awesome Project
 
-![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=25)
-![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=yes)
+![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=25)
+![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)
 
 Your project description here...</code>
             </div>
@@ -258,7 +258,7 @@ Your project description here...</code>
             const markdown = document.getElementById('percentage-markdown');
 
             preview.src = `/api/ai-percentage?value=${value}`;
-            markdown.textContent = `![AI Generated](https://your-domain.vercel.app/api/ai-percentage?value=${value})`;
+            markdown.textContent = `![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=${value})`;
         }
 
         function updatePRsBadge() {
@@ -267,7 +267,7 @@ Your project description here...</code>
             const markdown = document.getElementById('prs-markdown');
 
             preview.src = `/api/ai-prs?welcome=${value}`;
-            markdown.textContent = `![AI PRs Welcome](https://your-domain.vercel.app/api/ai-prs?welcome=${value})`;
+            markdown.textContent = `![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=${value})`;
         }
 
         function copyToClipboard(elementId) {
